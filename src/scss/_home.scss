@@ -10,6 +10,9 @@
     @include adaptive-value("padding-top", 180, 40, 320);
     @include adaptive-value("padding-bottom", 180, 40, 320);
   }
+  &__projects {
+    @include adaptive-value("padding-bottom", 60, 40, 320);
+  }
 }
 
 .services {
@@ -43,7 +46,7 @@
       grid-column: span 2;
       grid-row: span 2;
       .services__item-text {
-        color: #F0F0F1;
+        color: #f0f0f1;
         top: 62px;
         left: 62px;
       }
@@ -72,5 +75,91 @@
     color: #5e6695;
     top: 24px;
     left: 20px;
+  }
+}
+
+//projects
+
+.projects {
+  &__top {
+    @include adaptive-value("padding-top", 120, 40, 320);
+    background: rgba(3, 17, 95, 0.1);
+    padding-bottom: 258px;
+  }
+
+  &__suptitle {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 0.3em;
+    color: #303c7a;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #a960ab;
+  }
+
+  &__text {
+    color: $secondary;
+    font-size: 1.25rem;
+    max-width: 906px;
+  }
+
+  &__items {
+    margin-top: -215px;
+  }
+
+  &__items-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include adaptive-value("gap", 40, 20, 320);
+    @media (max-width: $breakpoint768){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+  }
+
+  &__item {
+    &:nth-child(5),
+    &:nth-child(6) {
+      grid-column: span 2;
+    }
+    @media (max-width: $breakpoint480){
+      grid-column: span 2;
+    }
+  }
+
+  &__img-wrapper {
+    margin-bottom: 4px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__item-name {
+    font-weight: 500;
+    font-size: 1.375rem;
+    margin-bottom: 4px;
+    color: $secondary;
+  }
+
+  &__item-text {
+    font-size: 1.125rem;
+    color: #656773;
   }
 }
