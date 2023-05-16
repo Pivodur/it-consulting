@@ -1,47 +1,86 @@
 // Container
 .container {
-    max-width: ($containerWidth + $containerPadding) + px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 $containerSidePadding + px;
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $containerSidePadding + px;
 
-    @media (max-width: $breakpoint1450) {
-        max-width: 1200px;
-    }
+  @media (max-width: $breakpoint992) {
+    max-width: 970px;
+  }
 
-    @media (max-width: $breakpoint992) {
-        max-width: 970px;
-    }
+  @media (max-width: $breakpoint768) {
+    max-width: 740px;
+  }
 
-    @media (max-width: $breakpoint768) {
-        max-width: 740px;
-    }
-
-    @media (max-width: $breakpoint480) {
-        max-width: none;
-    }
+  @media (max-width: $breakpoint480) {
+    max-width: none;
+  }
 }
 
 // Body & Locked
 body {
-    font-family: $fontMain;
-    &.locked {
-        overflow: hidden;
-    }
-    // Dark mode styles
-    &.dark {
-        background: #242424;
-    }
+  font-family: $fontMain;
+  font-weight: 325;
+  line-height: 1.2;
+  color: $primary;
+  &.locked {
+    overflow: hidden;
+  }
+  // Dark mode styles
+  &.dark {
+    background: #242424;
+  }
+}
+
+.button {
+  width: 206px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(95.85deg, #1e74ec -47.62%, #245b91 146.78%);
+  font-weight: 500;
+  color: #f0f0f1;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #f0f0f1;
+    color: #1e74ec;
+  }
 }
 
 // Animations
 // Fade
 @keyframes fade {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
+  100% {
+    opacity: 1;
+  }
+}
+
+//mixins
+@mixin adaptive-value(
+  $property,
+  $startSize,
+  $ultimSize,
+  $breakpoint,
+  $container: $containerWidth,
+  $type: "shrink"
+) {
+  $changeSize: abs($startSize - $ultimSize);
+  @if $type == "shrink" {
+    #{$property}: #{$startSize}px;
+    @media (max-width: #{$container}px){
+      #{$property}: calc(#{$ultimSize}px + #{$changeSize} * ((100vw - #{$breakpoint}px) / (#{$container} - #{$breakpoint})));
     }
+  } @else if $type == "rise" {
+    #{$property}: calc(
+      #{$startSize}px -
+        #{$changeSize} *
+        ((100vw - #{$breakpoint}px) / (#{$container} - #{$breakpoint}))
+    );
+  }
 }

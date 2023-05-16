@@ -1,150 +1,336 @@
 // ========================= [ Header styles ] =========================
 .header {
-    background-color: #43adff;
-
-    &.fixed {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        z-index: 2;
-    }
+  background-image: url("../img/header/header-bg.jpg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  &.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  &__search {
+    padding: 10px 5px 10px 26px;
+    border-left: 2px solid #656773;
+    @media (max-width: $burgerBreakpoint){
+      margin-right: 20px;
+    }
+  }
 }
 .logo {
-    a {
-        color: white;
+  margin-right: auto;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  &__text {
+    font-family: $fontSecondary;
+    @media (max-width: 1200px){
+      display: none;
     }
+  }
+  &__title {
+    color: #c1c2c7;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  &__subtitle {
+    color: #84858f;
+    font-weight: 400;
+  }
 }
 
 // ========================== [ Menu styles ] ==========================
 .menu {
+  display: flex;
+  gap: 30px;
+
+  // .menu__item
+  &__item {
     display: flex;
-    gap: 30px;
-
-    // .menu__item
-    &__item {
-        display: flex;
-        position: relative;
+    position: relative;
+    & + .menu__item {
+      &:before {
+        position: absolute;
+        content: "";
+        left: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #656773;
+        height: 15px;
+        width: 2px;
+      }
     }
+  }
 
-    // .menu__item-link
-    &__item-link {
-        color: white;
-        display: flex;
-        position: relative;
-        transition: 0.5s color;
-        &:after {
-            position: absolute;
-            content: '';
-            left: 0;
-            bottom: -3px;
-            background: #131418;
-            height: 1px;
-            width: 100%;
-            transform: scale(0);
-            transition: 0.5s transform;
-
-            // Comment if you need border animation
-            display: none;
-        }
-        &:hover {
-            color: #131418;
-            &:after {
-                transform: scale(1);
-            }
-        }
+  // .menu__item-link
+  &__item-link {
+    color: $primary;
+    display: flex;
+    position: relative;
+    transition: 0.5s color;
+    &:hover {
+      color: lighten($color: $primary, $amount: 100);
     }
+  }
 
-    // Mobile menu styles
-    @media screen and (max-width: $burgerBreakpoint) {
-        position: fixed;
-        background: $burgerColor;
-        left: 0;
-        top: 0;
-        height: 100vh;
-        width: 100vw;
-        display: none;
+  // Mobile menu styles
+  @media screen and (max-width: $burgerBreakpoint) {
+    position: fixed;
+    background: #131418;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
 
-        &.active {
-            display: flex;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            width: 100vw;
-            flex-direction: column;
-            pointer-events: all;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            animation: fade 0.1s linear;
+    &.active {
+      display: flex;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      flex-direction: column;
+      pointer-events: all;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      animation: fade 0.1s linear;
+      gap: 15px;
+      .menu__item {
+        padding: 15px 0;
+      }
+      .menu__item + .menu__item{
+        &::before {
+          display: none;
         }
+      }
     }
+  }
 }
 
 // ========================= [ Burger styles ] =========================
 .burger {
-    display: none;
-    background: transparent;
-    z-index: 3;
-    @media screen and (max-width: $burgerBreakpoint) {
-        display: flex;
-        position: relative;
-        height: 20px;
-        width: 30px;
+  display: none;
+  background: transparent;
+  z-index: 3;
+  @media screen and (max-width: $burgerBreakpoint) {
+    display: flex;
+    position: relative;
+    height: 20px;
+    width: 30px;
 
-        &.active {
-            &:before {
-                background: $burgerActiveColor;
-                transform: rotate(45deg);
-                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-                top: 8px;
-            }
+    &.active {
+      &:before {
+        background: $burgerActiveColor;
+        transform: rotate(45deg);
+        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+        top: 8px;
+      }
 
-            &:after {
-                background: $burgerActiveColor;
-                transform: rotate(-45deg);
-                bottom: 10px;
-                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-            }
+      &:after {
+        background: $burgerActiveColor;
+        transform: rotate(-45deg);
+        bottom: 10px;
+        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+      }
 
-            & span {
-                transform: scale(0);
-            }
-        }
-
-        &:before,
-        &:after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: $burgerColor;
-            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-        }
-
-        &:before {
-            top: 0;
-        }
-
-        &::after {
-            bottom: 0;
-        }
-
-        span {
-            position: absolute;
-            top: 9px;
-            right: 0;
-            width: 100%;
-            background: $burgerColor;
-            height: 2px;
-            transform: scale(1);
-            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-        }
+      & span {
+        transform: scale(0);
+      }
     }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: $burgerColor;
+      transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      position: absolute;
+      top: 9px;
+      right: 0;
+      width: 100%;
+      background: $burgerColor;
+      height: 2px;
+      transform: scale(1);
+      transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+    }
+  }
+}
+
+// select
+
+.select {
+  position: relative;
+  z-index: 1;
+  &__backdrop {
+    display: none;
+  }
+
+  &.open {
+    .select__dropdown {
+      display: block;
+      z-index: 1;
+    }
+
+    // .select__input {
+    //     border-bottom: none;
+    // }
+
+    .select__backdrop {
+      display: block;
+    }
+  }
+
+  // Select input styles
+  &__input {
+    // border: 1px solid #252241;
+    display: flex;
+    align-items: center;
+    padding: 15px 24px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    // Select image styles
+    .select__img {
+      width: 28px;
+      height: 20px;
+      pointer-events: none;
+    }
+
+    // Select arrow styles
+    .select__arrow {
+      display: none;
+    }
+
+    span {
+      pointer-events: none;
+    }
+  }
+
+  // Select dropdown styles
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1;
+    border-bottom: 1px solid #252241;
+    border-right: 1px solid #252241;
+    border-left: 1px solid #252241;
+
+    .select__list {
+      .select__item {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-style: normal;
+        font-size: 16px;
+        .select__img {
+          width: 28px;
+          height: 20px;
+          pointer-events: none;
+        }
+
+        // Selected item styles
+        &.selected {
+          background-color: #f0f0f1;
+        }
+
+        // Select item hover state
+        &:hover {
+          background-color: $primary;
+          transition: 0.15 background-color ease-in;
+        }
+      }
+    }
+  }
+}
+
+.header-content {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__inner {
+    max-width: 500px;
+    width: 100%;
+    margin-right: auto;
+    // margin-bottom: 16.6vh;
+    @include adaptive-value("margin-bottom", 180, 20, 320)
+  }
+
+  &__suptitle {
+    font-size: 1.625rem;
+    color: #C1C2C7;
+    margin-bottom: 0.3em;
+  }
+
+  &__title {
+    font-size: 3.875rem;
+    margin-bottom: 0.16em;
+    @include adaptive-value("font-size", 68, 32, 320);
+  }
+
+  &__subtitle {
+    font-family: $fontSecondary;
+    font-size: 1.25rem;
+    margin-bottom: 5.5vh;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    @media (max-width: $breakpoint768){
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    color: #F0F0F1;
+    text-align: center;
+    font-weight: 700;
+    // font-size: 4.25rem;
+    @include adaptive-value("font-size", 68, 32, 320);
+    // @media (max-width: $breakpoint992){
+    //   font-size: 3rem;
+    // }
+    span {
+      display: block;
+      font-weight: 325;
+      color: $primary;
+      font-size: 0.38em;
+    }
+    @media (max-width: $breakpoint768){
+      flex: 0 1 45%;
+    }
+  }
 }
