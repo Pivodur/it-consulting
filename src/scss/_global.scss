@@ -73,8 +73,11 @@ body {
   $changeSize: abs($startSize - $ultimSize);
   @if $type == "shrink" {
     #{$property}: #{$startSize}px;
-    @media (max-width: #{$container}px){
-      #{$property}: calc(#{$ultimSize}px + #{$changeSize} * ((100vw - #{$breakpoint}px) / (#{$container} - #{$breakpoint})));
+    @media (max-width: #{$container}px) {
+      #{$property}: calc(
+        #{$ultimSize}px + #{$changeSize} * ((100vw - #{$breakpoint}px) /
+              (#{$container} - #{$breakpoint}))
+      );
     }
   } @else if $type == "rise" {
     #{$property}: calc(
