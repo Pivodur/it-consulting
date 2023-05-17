@@ -38,6 +38,7 @@ body {
   height: 48px;
   display: flex;
   justify-content: center;
+  border: 2px solid transparent;
   align-items: center;
   background: linear-gradient(95.85deg, #1e74ec -47.62%, #245b91 146.78%);
   font-weight: 500;
@@ -46,8 +47,11 @@ body {
   &:hover {
     background: #f0f0f1;
     color: #1e74ec;
+    border: 2px solid #1e74ec;
   }
 }
+
+
 
 // Animations
 // Fade
@@ -86,4 +90,10 @@ body {
         ((100vw - #{$breakpoint}px) / (#{$container} - #{$breakpoint}))
     );
   }
+}
+
+.title {
+  font-weight: 700;
+  color: #03115f;
+  @include adaptive-value("font-size", 62, 26, 320);
 }

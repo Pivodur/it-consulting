@@ -215,3 +215,7 @@ const selectLang = new Select("#select", {
     console.log(item.value);
   },
 });
+
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
