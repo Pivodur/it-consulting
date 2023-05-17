@@ -1,3 +1,8 @@
+html {
+  @media (max-width: $breakpoint480){
+    font-size: 0.875rem;
+  }
+}
 // Container
 .container {
   max-width: ($containerWidth + $containerPadding) + px;
@@ -31,6 +36,7 @@ body {
   &.dark {
     background: #242424;
   }
+
 }
 
 .button {
@@ -49,6 +55,23 @@ body {
     color: #1e74ec;
     border: 2px solid #1e74ec;
   }
+}
+
+.button-transparent {
+  width: 206px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #1e74ec;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #1e74ec;
+  &:hover {
+    background: #f0f0f1;
+    color: $secondary;
+  }
+
 }
 
 
@@ -96,4 +119,26 @@ body {
   font-weight: 700;
   color: #03115f;
   @include adaptive-value("font-size", 62, 26, 320);
+}
+
+
+.section {
+  &__services {
+    padding: 180px 0;
+    @include adaptive-value("padding-top", 180, 40, 320);
+    @include adaptive-value("padding-bottom", 180, 40, 320);
+  }
+
+  &__about {
+    @include adaptive-value("padding-top", 180, 40, 992);
+    @include adaptive-value("padding-bottom", 90, 20, 320);
+    @media (max-width: $breakpoint992){
+      padding-top: 0;
+    }
+  }
+
+  &__projects,
+  &__contacts {
+    @include adaptive-value("padding-bottom", 60, 40, 320);
+  }
 }

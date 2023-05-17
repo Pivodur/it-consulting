@@ -4,18 +4,7 @@
   @include adaptive-value("font-size", 62, 36, 320);
 }
 
-.section {
-  &__services,
-  &__team {
-    padding: 180px 0;
-    @include adaptive-value("padding-top", 180, 40, 320);
-    @include adaptive-value("padding-bottom", 180, 40, 320);
-  }
-  &__projects,
-  &__contacts {
-    @include adaptive-value("padding-bottom", 60, 40, 320);
-  }
-}
+
 
 .services {
   &__suptitle {
@@ -97,18 +86,8 @@
     color: #303c7a;
   }
 
-  &__title-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 1.5rem;
-    gap: 20px;
-    @media (max-width: $breakpoint768) {
-      flex-wrap: wrap;
-    }
-  }
-
   &__title {
+    margin-bottom: 0.5em;
   }
 
   &__link {
@@ -171,16 +150,44 @@
     font-size: 1.125rem;
     color: #656773;
   }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    @include adaptive-value("margin-top", 64, 40, 320);
+    @media (max-width: $breakpoint480){
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  }
+  &__links-item {
+    width: 100%;
+  }
+
+  &__links-portfolio {
+    @media (max-width: $breakpoint480){
+      order: 1;
+      border-color: transparent;
+    }
+
+  }
 }
 
-//team
+//about
 
-.team {
+.about {
+
   &__suptitle {
-    font-weight: 500;
     font-size: 1.375rem;
     color: #303c7a;
     margin-bottom: 1.35em;
+    &--inside {
+      display: none;
+    }
+    @media (max-width: $breakpoint992){
+      margin-top: 24px;
+    }
   }
 
   &__inner {
@@ -192,19 +199,27 @@
     }
   }
 
-  &__video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__img-wrapper {
     max-width: 947px;
     width: 100%;
-    min-height: 500px;
-    background-image: url("../img/video-bg.jpg");
+    background-image: url("../img/about/about-main.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    @media (max-width: $breakpoint992) {
-      min-height: auto;
-      aspect-ratio: 2 / 1;
+    @media (max-width: $breakpoint992){
+      display: none;
+      max-width: 100%;
+      height: 252px;
+    }
+    &--outside {
+      display: none;
+      @media (max-width: $breakpoint992) {
+        display: block;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -225,28 +240,33 @@
     color: #040a2d;
     margin-bottom: 5rem;
     @media (max-width: $breakpoint992) {
-      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      margin-bottom: 1.5em;
     }
   }
 
   &__links {
     display: flex;
     gap: 25px;
+    @media (max-width: $breakpoint480){
+      justify-content: flex-end;
+    }
   }
 
-  &__link {
-    width: 206px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    color: #1e74ec;
-    transition: all 0.3s ease-in-out;
-    border: 2px solid #1e74ec;
-    &:hover {
-      background: #f0f0f1;
-      color: $secondary;
+  &__link-position {
+    @media (max-width: $breakpoint480){
+      display: none;
+    }
+  }
+
+  &__link-more {
+    @media (max-width: $breakpoint480){
+      font-size: 14px;
+      color: #1E74EC;
+      background: transparent;
+      width: auto;
+      height: auto;
+      padding: 8px 16px;
     }
   }
 }
