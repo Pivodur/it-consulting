@@ -121,6 +121,9 @@
     &:nth-child(5),
     &:nth-child(6) {
       grid-column: span 2;
+      @media (max-width: $breakpoint480) {
+        display: none;
+      }
     }
     @media (max-width: $breakpoint480) {
       grid-column: span 2;
@@ -497,6 +500,91 @@
 
   &__item-name {
     @include adaptive-value("font-size", 26, 20, 320);
+    margin-bottom: 10px;
+    span {
+      color: #002984;
+      background: linear-gradient(130.67deg, #1e74ec 6.5%, #002984 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__item-text {
+    @include adaptive-value("font-size", 18, 12, 320);
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #a960ab;
+    position: relative;
+    padding-right: 64px;
+    @include adaptive-value("margin-top", 64, 40, 320);
+    &:after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 40px;
+      background-image: url("../img/icons/arrow-right.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%);
+    }
+    @media (max-width: $breakpoint480) {
+      width: 168px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      color: #1e74ec;
+      transition: all 0.3s ease-in-out;
+      border: 2px solid #1e74ec;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      &:hover {
+        background: #f0f0f1;
+        color: $secondary;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.benefits {
+  &__title {
+  }
+
+  &__text {
+    max-width: 750px;
+    @include adaptive-value("margin-bottom", 64, 40, 320);
+  }
+
+  &__items {
+    display: grid;
+    grid-template: 1fr / repeat(4, 1fr);
+    gap: 40px;
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    @media (max-width: $breakpoint480) {
+      gap: 64px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__item-name {
+    @include adaptive-value("font-size", 22, 18, 320);
     margin-bottom: 10px;
     span {
       color: #002984;
