@@ -20,7 +20,7 @@
   &__search {
     padding: 10px 5px 10px 26px;
     border-left: 2px solid #656773;
-    @media (max-width: $burgerBreakpoint){
+    @media (max-width: $burgerBreakpoint) {
       margin-right: 20px;
     }
   }
@@ -34,7 +34,7 @@
   }
   &__text {
     font-family: $fontSecondary;
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       display: none;
     }
   }
@@ -54,7 +54,6 @@
 .menu {
   display: flex;
   gap: 30px;
-
   // .menu__item
   &__item {
     display: flex;
@@ -75,10 +74,12 @@
 
   // .menu__item-link
   &__item-link {
-    color: $primary;
+    color: #dddde2;
+
     display: flex;
     position: relative;
     transition: 0.5s color;
+
     &:hover {
       color: lighten($color: $primary, $amount: 100);
     }
@@ -110,7 +111,7 @@
       .menu__item {
         padding: 15px 0;
       }
-      .menu__item + .menu__item{
+      .menu__item + .menu__item {
         &::before {
           display: none;
         }
@@ -284,12 +285,12 @@
     width: 100%;
     margin-right: auto;
     // margin-bottom: 16.6vh;
-    @include adaptive-value("margin-bottom", 180, 20, 320)
+    @include adaptive-value("margin-bottom", 180, 20, 320);
   }
 
   &__suptitle {
     font-size: 1.625rem;
-    color: #C1C2C7;
+    color: #c1c2c7;
     margin-bottom: 0.3em;
   }
 
@@ -297,9 +298,11 @@
     font-size: 3.875rem;
     margin-bottom: 0.16em;
     @include adaptive-value("font-size", 68, 32, 320);
+    color: #EEEFF1;
   }
 
   &__subtitle {
+    color: #DDDDE2;
     font-family: $fontSecondary;
     font-size: 1.25rem;
     margin-bottom: 5.5vh;
@@ -309,13 +312,13 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    @media (max-width: $breakpoint768){
+    @media (max-width: $breakpoint768) {
       flex-wrap: wrap;
     }
   }
 
   &__item {
-    color: #F0F0F1;
+    color: #EEEFF1;
     text-align: center;
     font-weight: 700;
     // font-size: 4.25rem;
@@ -326,10 +329,9 @@
     span {
       display: block;
       font-weight: 325;
-      color: $primary;
       font-size: 0.38em;
     }
-    @media (max-width: $breakpoint768){
+    @media (max-width: $breakpoint768) {
       flex: 0 1 45%;
     }
   }
