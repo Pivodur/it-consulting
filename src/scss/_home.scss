@@ -271,6 +271,7 @@
 }
 
 .contacts {
+  color: #dddde2;
   font-size: 0.875rem;
   &__top {
     @include adaptive-value("padding-top", 110, 40, 320);
@@ -313,7 +314,7 @@
   &__info {
     max-width: 578px;
     width: 100%;
-    background: linear-gradient(159.18deg, #5f249f 13.77%, #320a5e 83.86%);
+    background: #012c88;
     @include adaptive-value("padding-top", 58, 20, 320);
     @include adaptive-value("padding-bottom", 58, 20, 320);
     @include adaptive-value("padding-right", 40, 20, 320);
@@ -642,3 +643,97 @@
     }
   }
 }
+
+.clients {
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    }
+  }
+
+  &__item:nth-child(n + 7) {
+    @media (max-width: $breakpoint480) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.faq {
+  max-width: 1200px;
+  margin: 0 auto;
+  &__title {
+    max-width: 900px;
+  }
+
+
+  .accordion {
+    .accordion__item {
+      border-bottom: 2px solid #dddde2;
+      padding: 25px 0 35px;
+      @media (max-width: $breakpoint480){
+        padding: 16px 0 12px;
+      }
+      
+      // Trigger styles
+      .accordion__item-trigger {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+  
+        .trigger__text {
+          @include adaptive-value("font-size", 26, 18, 320);
+          padding-right: 37px;
+          color: #535670;
+        }
+  
+        .trigger__img {
+          position: relative;
+          margin-left: auto;
+          margin-right: 9px;
+          transition: all .3s ease;
+        }
+      }
+      // Active state styles
+      &.accordion__item-active {
+        .accordion__item-content {
+          display: block;
+        }
+  
+        .trigger__img {
+          transform: rotate(45deg);
+        }
+      }
+  
+      // Content styles
+      .accordion__item-content {
+        display: none;
+        animation: fade 0.3s ease;
+        margin-top: 10px;
+        margin-right: 9px;
+        .content__text {
+          max-width: 946px;
+          @include adaptive-value("font-size", 18, 12, 320);
+          @include adaptive-value("margin-left", 124, 25, 320);
+          color: #75788d;
+  
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

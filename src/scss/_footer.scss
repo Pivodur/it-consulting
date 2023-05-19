@@ -1,4 +1,121 @@
 // Footer
 footer {
+  display: block;
+  background: #03115f;
+}
+
+.footer {
+  color: #e0e1e3;
+  @include adaptive-value("padding-top", 64, 40, 320);
+  @include adaptive-value("font-size", 16, 12, 320);
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $breakpoint992){
+      flex-wrap: wrap;
+    }
+    @media (max-width: $breakpoint768){
+      // column-gap: 8px;
+    }
+  }
+
+  &__team {
+    color: #f0f0f1;
+    max-width: 230px;
+    width: 100%;
+    @media (max-width: $breakpoint768){
+      max-width: 47%;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 374px){
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__team-name {
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 700;
+    @media (max-width: 375px){
+      margin-bottom: 5px;
+    }
+  }
+
+  &__team-tel,
+  &__team-mail {
     display: block;
+    color: inherit;
+    margin-bottom: 8px;
+  }
+
+  &__nav {
+    font-size: 1rem;
+    max-width: 105px;
+    width: 100%;
+    @media (max-width: $breakpoint768){
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 16px;
+  }
+
+  &__nav-link {
+    color: inherit;
+    text-transform: uppercase;
+  }
+
+  &__social {
+    max-width: 105px;
+    width: 100%;
+    @media (max-width: $breakpoint992){
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      column-gap: 40px;
+    }
+    @media (max-width: 375px){
+      column-gap: 0;
+      justify-content: space-between;
+    }
+  }
+
+  &__social-item {
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    img {
+      display: none;
+    }
+    @media (max-width: $breakpoint992){
+      margin-bottom: 0;
+      img {
+        display: block;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &__social-link {
+    color: inherit;
+  }
+
+  &__bottom {
+    padding: 22px 0 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__bottom-link {
+    color: #e0e1e3;
+    padding: 0 16px;
+    &:not(:last-child) {
+      border-right: 1px solid #a3a4ab;
+    }
+  }
 }

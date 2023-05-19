@@ -20,6 +20,7 @@ html {
 
   @media (max-width: $breakpoint480) {
     max-width: none;
+    padding: 0 15px;
   }
 }
 
@@ -129,7 +130,6 @@ body {
 
 .section {
   &__services {
-    padding: 180px 0;
     @include adaptive-value("padding-top", 180, 40, 320);
     @include adaptive-value("padding-bottom", 180, 40, 320);
   }
@@ -144,12 +144,19 @@ body {
 
   &__projects,
   &__contacts {
-    @include adaptive-value("padding-bottom", 60, 40, 320);
+    @include adaptive-value("padding-bottom", 90, 20, 320);
   }
 
-  &__development {
+
+  &__development,
+  &__clients,
+  &__faq {
     @include adaptive-value("padding-top", 90, 20, 320);
     @include adaptive-value("padding-bottom", 180, 40, 320);
+  }
 
+  &__benefits {
+    @include adaptive-value("padding-top", 90, 20, 320);
+    @include adaptive-value("padding-bottom", 90, 20, 320);
   }
 }
