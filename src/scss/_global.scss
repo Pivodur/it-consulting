@@ -55,6 +55,10 @@ body {
     color: #1e74ec;
     border: 2px solid #1e74ec;
   }
+  @media (max-width: $breakpoint480){
+    width: 100%;
+    border-radius: 8px;
+  }
 }
 
 .button-transparent,
@@ -73,8 +77,6 @@ body {
     color: $secondary;
   }
 }
-
-
 
 .suptitle {
   font-size: 1.375rem;
@@ -128,6 +130,14 @@ body {
   margin-bottom: 0.4em;
 }
 
+.main-title {
+  font-weight: 700;
+  font-size: 62px;
+  color: #eeeff1;
+  @include adaptive-value("font-size", 62, 34, 320);
+  margin-bottom: 15px;
+}
+
 .section {
   &__services {
     @include adaptive-value("padding-top", 180, 40, 320);
@@ -147,7 +157,6 @@ body {
     @include adaptive-value("padding-bottom", 90, 20, 320);
   }
 
-
   &__development,
   &__clients,
   &__faq {
@@ -158,5 +167,19 @@ body {
   &__benefits {
     @include adaptive-value("padding-top", 90, 20, 320);
     @include adaptive-value("padding-bottom", 90, 20, 320);
+  }
+
+  &__portfolio {
+    @include adaptive-value("padding-top", 180, 40, 320);
+    @include adaptive-value("padding-bottom", 90, 20, 320);
+  }
+
+  &__portfolio-contacts {
+    background-image: url('../img/portfolio-page/contacts-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include adaptive-value("padding-top", 243, 81, 320);
+    @include adaptive-value("padding-bottom", 243, 64, 320);
   }
 }

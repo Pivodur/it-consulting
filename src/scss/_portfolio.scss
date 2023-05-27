@@ -1,0 +1,83 @@
+.team-header {
+  background-image: url("../img/portfolio-page/team-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  &__content {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    color: #e6e8ef;
+  }
+
+  &__subtitle {
+    color: #dddde2;
+    font-size: 1.125rem;
+    max-width: 577px;
+    margin-bottom: 64px;
+    @media (max-width: $breakpoint480) {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.portfolio {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 40px;
+    @media (max-width: $breakpoint480) {
+      grid-template-columns: 1fr;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    margin-bottom: 15px;
+  }
+
+  &__item-name {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    color: #35417f;
+    margin-bottom: 7px;
+  }
+
+  &__item-text {
+    font-size: 18px;
+  }
+}
+
+.portfolio-contacts {
+
+  &__inner {
+
+  }
+
+  &__title {
+    color: #E6E8EF;
+  }
+
+  &__suptitle {
+    color: #DDDDE2;
+  }
+
+  &__text {
+    color: #DDDDE2;
+    margin-bottom: 25px;
+    max-width: 577px;
+  }
+}

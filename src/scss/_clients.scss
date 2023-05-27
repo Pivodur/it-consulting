@@ -1,0 +1,25 @@
+.clients {
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    }
+  }
+
+  &__item:nth-child(n + 7) {
+    @media (max-width: $breakpoint480) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
