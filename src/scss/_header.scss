@@ -1,12 +1,46 @@
 // ========================= [ Header styles ] =========================
 .header {
-
   &.fixed {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 2;
+  }
+
+  &__content {
+    height: 560px;
+    @include adaptive-value("padding-top", 110, 80, 320);
+  }
+
+  &__suptitle {
+    font-size: 26px;
+    color: #cdcfdf;
+    margin-bottom: 10px;
+    @media (max-width: $breakpoint480){
+      margin-bottom: 4px;
+      font-size: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 62px;
+    color: #eeeff1;
+    @include adaptive-value("font-size", 62, 34, 320);
+    margin-bottom: 15px;
+  }
+  &__subtitle {
+    color: #dddde2;
+    font-size: 1.125rem;
+    max-width: 577px;
+  }
+
+  &__link {
+    margin-top: 64px;
+    @media (max-width: $breakpoint480) {
+      margin-bottom: 80px;
+    }
   }
 }
 .navbar {
@@ -270,5 +304,3 @@
     }
   }
 }
-
-

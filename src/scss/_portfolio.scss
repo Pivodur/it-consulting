@@ -1,28 +1,9 @@
-.team-header {
-  background-image: url("../img/portfolio-page/team-header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  &__content {
-    height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.portfolio-top {
 
   &__title {
     color: #e6e8ef;
   }
 
-  &__subtitle {
-    color: #dddde2;
-    font-size: 1.125rem;
-    max-width: 577px;
-    margin-bottom: 64px;
-    @media (max-width: $breakpoint480) {
-      margin-bottom: 80px;
-    }
-  }
 }
 
 .portfolio {

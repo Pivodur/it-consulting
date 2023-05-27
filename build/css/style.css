@@ -210,15 +210,8 @@ body.dark {
   margin-bottom: 0.4em;
 }
 
-.main-title {
-  font-weight: 700;
-  font-size: 62px;
-  color: #eeeff1;
-  font-size: 62px;
-  margin-bottom: 15px;
-}
-
-.section__services {
+.section__services,
+.section__team {
   padding-top: 180px;
   padding-bottom: 180px;
 }
@@ -245,6 +238,13 @@ body.dark {
   padding-bottom: 90px;
 }
 
+.section__portfolio-top {
+  background-image: url("../img/portfolio-page/team-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .section__portfolio {
   padding-top: 180px;
   padding-bottom: 90px;
@@ -259,12 +259,57 @@ body.dark {
   padding-bottom: 243px;
 }
 
+.section__team-top {
+  background-image: url("../img/team-page/team-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.section__recruit {
+  background-image: url("../img/team-page/team-contacts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding-top: 348px;
+  padding-bottom: 252px;
+}
+
 .header.fixed {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 2;
+}
+
+.header__content {
+  height: 560px;
+  padding-top: 110px;
+}
+
+.header__suptitle {
+  font-size: 26px;
+  color: #cdcfdf;
+  margin-bottom: 10px;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 62px;
+  color: #eeeff1;
+  font-size: 62px;
+  margin-bottom: 15px;
+}
+
+.header__subtitle {
+  color: #dddde2;
+  font-size: 1.125rem;
+  max-width: 577px;
+}
+
+.header__link {
+  margin-top: 64px;
 }
 
 .navbar {
@@ -916,36 +961,8 @@ body.dark {
   margin-top: 0;
 }
 
-.team-header {
-  background-image: url("../img/portfolio-page/team-header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-.team-header__content {
-  height: calc(100vh - 100px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.team-header__title {
+.portfolio-top__title {
   color: #e6e8ef;
-}
-
-.team-header__subtitle {
-  color: #dddde2;
-  font-size: 1.125rem;
-  max-width: 577px;
-  margin-bottom: 64px;
 }
 
 .portfolio__items {
@@ -1005,6 +1022,83 @@ body.dark {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.team__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 330px);
+  gap: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team__info {
+  grid-column: 2 span;
+}
+
+.team__title {
+  max-width: 520px;
+}
+
+.team__text {
+  font-size: 20px;
+}
+
+.team__item {
+  text-align: center;
+}
+
+.team__item.is-visible {
+  display: block !important;
+}
+
+.team__img-wrapper {
+  aspect-ratio: 1/1;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.team__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.team__link {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.team__name {
+  color: #03115f;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.team__button {
+  display: none;
+}
+
+.recruit__suptitle {
+  font-size: 26px;
+  color: #cdcfdf;
+  margin-bottom: 10px;
+}
+
+.recruit__title {
+  font-weight: 700;
+  font-size: 62px;
+  color: #eeeff1;
+  font-size: 62px;
+  margin-bottom: 15px;
+}
+
+.recruit__link {
+  margin-top: 64px;
 }
 
 .contacts {
@@ -1338,21 +1432,16 @@ footer {
       );
   }
 
-  .main-title {
-    font-size: calc(
-        34px + 28 * ((100vw - 320px) /
-              (1440 - 320))
-      );
-  }
-
-  .section__services {
+  .section__services,
+  .section__team {
     padding-top: calc(
         40px + 140 * ((100vw - 320px) /
               (1440 - 320))
       );
   }
 
-  .section__services {
+  .section__services,
+  .section__team {
     padding-bottom: calc(
         40px + 140 * ((100vw - 320px) /
               (1440 - 320))
@@ -1437,6 +1526,34 @@ footer {
   .section__portfolio-contacts {
     padding-bottom: calc(
         64px + 179 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
+  .section__recruit {
+    padding-top: calc(
+        80px + 268 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
+  .section__recruit {
+    padding-bottom: calc(
+        64px + 188 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
+  .header__content {
+    padding-top: calc(
+        80px + 30 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
+  .header__title {
+    font-size: calc(
+        34px + 28 * ((100vw - 320px) /
               (1440 - 320))
       );
   }
@@ -1591,6 +1708,13 @@ footer {
   .faq .accordion .accordion__item .accordion__item-content .content__text {
     margin-left: calc(
         25px + 99 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
+  .recruit__title {
+    font-size: calc(
+        34px + 28 * ((100vw - 320px) /
               (1440 - 320))
       );
   }
@@ -1972,6 +2096,36 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .team__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .team__info {
+    grid-column: 1 span;
+  }
+
+  .team__item:nth-child(n+6) {
+    display: none;
+  }
+
+  .team__button {
+    display: block;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid #1e74ec;
+    color: #1e74ec;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    margin: 32px auto 0;
+  }
+
+  .team__button:hover {
+    background: #f0f0f1;
+    color: #040A2D;
+  }
+
   .contacts__links-item {
     width: 20px;
     height: 20px;
@@ -2001,6 +2155,15 @@ footer {
   .button {
     width: 100%;
     border-radius: 8px;
+  }
+
+  .header__suptitle {
+    margin-bottom: 4px;
+    font-size: 20px;
+  }
+
+  .header__link {
+    margin-bottom: 80px;
   }
 
   .services__items {
@@ -2128,10 +2291,6 @@ footer {
     padding: 16px 0 12px;
   }
 
-  .team-header__subtitle {
-    margin-bottom: 80px;
-  }
-
   .portfolio__items {
     grid-template-columns: 1fr;
     gap: 64px;
@@ -2139,6 +2298,19 @@ footer {
 
   .clients__item:nth-child(n+7) {
     display: none;
+  }
+
+  .team__text {
+    font-size: 14px;
+  }
+
+  .recruit__suptitle {
+    margin-bottom: 4px;
+    font-size: 20px;
+  }
+
+  .recruit__link {
+    margin-bottom: 40px;
   }
 
   .contacts__links {
