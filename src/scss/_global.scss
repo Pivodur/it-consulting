@@ -200,4 +200,11 @@ body {
     @include adaptive-value("padding-top", 348, 80, 320);
     @include adaptive-value("padding-bottom", 252, 64, 320);
   }
+
+  &__projectform-top {
+    background-image: url("../img/project-form/projectform-top-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 }
