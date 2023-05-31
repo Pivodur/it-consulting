@@ -26,6 +26,11 @@
 
   &__content {
     margin-top: -227px;
+    .container {
+      @media (max-width: $breakpoint480){
+        padding: 0;
+      }
+    }
   }
 
   &__content-inner {
@@ -36,6 +41,9 @@
     @include adaptive-value("padding", 110, 30, 320);
     @media (max-width: $breakpoint992) {
       flex-wrap: wrap;
+    }
+    @media (max-width: $breakpoint480){
+      padding: 0;
     }
   }
 
@@ -50,6 +58,10 @@
     @media (max-width: $breakpoint992) {
       max-width: 100%;
     }
+    @media (max-width: $breakpoint480){
+      padding: 40px 16px;
+    }
+
   }
 
   &__info-top {
@@ -61,6 +73,11 @@
   &__info-title {
     font-size: 1.625em;
     margin-bottom: 0.5em;
+    color: #dddde2;
+  }
+
+  &__info-text {
+    color: #dddde2;
   }
 
   &__info-team {
@@ -80,6 +97,7 @@
   &__team-name {
     text-transform: uppercase;
     @include adaptive-value("margin-bottom", 15, 5, 320);
+    color: #dddde2;
   }
 
   &__team-mail {
@@ -120,6 +138,9 @@
     width: 100%;
     @media (max-width: $breakpoint992) {
       max-width: 100%;
+    }
+    @media (max-width: $breakpoint480){
+      padding: 40px 16px;
     }
   }
 

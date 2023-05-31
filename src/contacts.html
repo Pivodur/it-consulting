@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.min.css" rel="stylesheet">
+  <title>Contact us</title>
+</head>
+<body>
+  <section class="section__contact-top">
+    @@include("./html/_header.html")
+    <div class="container">
+      <div class="header__content">
+        <p class="header__suptitle">
+          Contact us
+        </p>
+        <h1 class="header__title">
+          We are ready to offer you the best IT solutions
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="section__contacts-page">
+    <div class="contacts__content">
+      <div class="container">
+        <div class="contacts__content-inner">
+          <div class="contacts__info">
+            <div class="contacts__info-top">
+              <h6 class="contacts__info-title">Prefer to talk to us?</h6>
+              <p class="contacts__info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+                purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim
+              </p>
+            </div>
+            <div class="contacts__info-team">
+              <div class="contacts__team-item">
+                <p class="contacts__team-name">Slovak about</p>
+                <a class="contacts__team-mail" href="mailto:contact@unionsmarttech.ru">contact@unionsmarttech.ru</a>
+                <a class="contacts__team-tel" href="tel:+421 494539852">+421 494 539-852</a>
+              </div>
+              <div class="contacts__team-item">
+                <p class="contacts__team-name">Russian about</p>
+                <a class="contacts__team-mail" href="mailto:contact@unionsmarttech.ru">contact@unionsmarttech.ru</a>
+                <a class="contacts__team-tel" href="tel:++79119329029">+7 911 932-90-29</a>
+              </div>
+            </div>
+            <div class="contacts__links">
+              <a class="contacts__links-item" href="#">
+                <img class="contacts__links-img" src="./img/icons/linkedin.svg" alt="linkedin">
+              </a>
+              <a class="contacts__links-item" href="#">
+                <img class="contacts__links-img" src="./img/icons/google.svg" alt="google">
+              </a>
+              <a class="contacts__links-item" href="#">
+                <img class="contacts__links-img" src="./img/icons/facebook.svg" alt="facebook">
+              </a>
+              <a class="contacts__links-item" href="#">
+                <img class="contacts__links-img" src="./img/icons/dribbble.svg" alt="dribbble">
+              </a>
+              <a class="contacts__links-item" href="#">
+                <img class="contacts__links-img" src="./img/icons/Instagram.svg" alt="Instagram">
+              </a>
+            </div>
+          </div>
+          <form class="contacts__form" action="#">
+            <h5 class="contacts__form-title">Contact Us</h5>
+            <p class="contacts__form-subtitle">Leave your details and manager will contact you</p>
+            <input class="contacts__form-input" type="text" placeholder="Name">
+            <input class="contacts__form-input" type="text" placeholder="Company">
+            <input class="contacts__form-input" type="text" placeholder="Phone Number">
+            <textarea class="contacts__form-textarea" placeholder="Message"></textarea>
+            <div class="contacts__form-bottom">
+              <button class="button contacts__btn">Submit</button>
+              <div class="contacts__smalltext">
+                <p>
+                  By clicking the button you agree to the
+                  <a href="#">EULA</a>
+                </p>
+                <p>
+                  Click to read UST's Security and
+                  <a href="#">Privacy Policy</a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  @@include('./html/_footer.html')
+  
+  <script src="./js/contacts.js"></script>
+</body>
+</html>

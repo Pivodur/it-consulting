@@ -282,6 +282,17 @@ body.dark {
   background-position: center center;
 }
 
+.section__contact-top {
+  background-image: url("../img/contacts-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.section__contacts-page {
+  padding-bottom: 99px;
+}
+
 .header.fixed {
   position: fixed;
   left: 0;
@@ -1172,6 +1183,11 @@ body.dark {
 .contacts__info-title {
   font-size: 1.625em;
   margin-bottom: 0.5em;
+  color: #dddde2;
+}
+
+.contacts__info-text {
+  color: #dddde2;
 }
 
 .contacts__info-team {
@@ -1189,6 +1205,7 @@ body.dark {
 .contacts__team-name {
   text-transform: uppercase;
   margin-bottom: 15px;
+  color: #dddde2;
 }
 
 .contacts__team-mail {
@@ -2358,6 +2375,14 @@ footer {
     border-radius: 8px;
   }
 
+  .section__contacts-page {
+    padding-bottom: 0;
+  }
+
+  .section__contacts-page .container {
+    padding: 0;
+  }
+
   .header__suptitle {
     margin-bottom: 4px;
     font-size: 20px;
@@ -2514,11 +2539,27 @@ footer {
     margin-bottom: 40px;
   }
 
+  .contacts__content .container {
+    padding: 0;
+  }
+
+  .contacts__content-inner {
+    padding: 0;
+  }
+
+  .contacts__info {
+    padding: 40px 16px;
+  }
+
   .contacts__links {
     gap: 0;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+
+  .contacts__form {
+    padding: 40px 16px;
   }
 
   .contacts__form-bottom {

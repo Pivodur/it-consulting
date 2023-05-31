@@ -1,19 +1,3 @@
-
-
-const inputs = document.querySelectorAll(".project-form__input");
-
-inputs.forEach((el) => {
-  el.addEventListener("input", () => {
-    if (el.nextElementSibling && el.nextElementSibling.classList.contains("project-form__placeholder")) {
-      if (el.value) {
-        el.nextElementSibling.classList.add("hidden");
-      } else {
-        el.nextElementSibling.classList.remove("hidden");
-      }
-    }
-  });
-});
-
 function burgerMenu() {
   const burger = document.querySelector(".burger");
   const menu = document.querySelector(".menu");
@@ -230,6 +214,3 @@ const selectLang = new Select("#select", {
     console.log(item.value);
   },
 });
-
-
-

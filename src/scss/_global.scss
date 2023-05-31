@@ -78,8 +78,6 @@ body {
   }
 }
 
-
-
 .suptitle {
   font-size: 1.375rem;
   color: #303c7a;
@@ -206,5 +204,24 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+  }
+
+  &__contact-top {
+    background-image: url("../img/contacts-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__contacts-page {
+    padding-bottom: 99px;
+    @media (max-width: $breakpoint480) {
+      padding-bottom: 0;
+    }
+    .container {
+      @media (max-width: $breakpoint480) {
+        padding: 0;
+      }
+    }
   }
 }
