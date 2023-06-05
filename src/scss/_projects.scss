@@ -1,0 +1,84 @@
+.cooperation {
+  &__container {
+    padding: 0 56px;
+    @media (max-width: 768px) {
+      padding: 0 $containerSidePadding + px;
+    }
+    @media (max-width: $breakpoint480) {
+      padding: 0 15px;
+    }
+  }
+
+  &__swiper-wrapper {
+    position: relative;
+  }
+
+  &__swiper {
+    position: relative;
+    padding-bottom: 40px;
+  }
+  &__items {
+    // display: flex;
+    // align-items: stretch;
+  }
+
+  &__item {
+    max-width: 454px;
+    width: 100%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__item-inner {
+    padding: 24px 35px;
+    @media (max-width: 768px){
+      padding: 24px 16px;
+    }
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__item-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(130.67deg, #1e74ec 6.5%, #002984 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+  }
+
+  &__btn-next,
+  &__btn-prev {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__btn-prev {
+    left: -46px;
+  }
+  &__btn-next {
+    right: -46px;
+  }
+  .swiper-pagination {
+    margin-top: 40px;
+  }
+}

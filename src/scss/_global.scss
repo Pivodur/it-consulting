@@ -132,7 +132,8 @@ body {
 
 .section {
   &__services,
-  &__team {
+  &__team,
+  &__cooperation {
     @include adaptive-value("padding-top", 180, 40, 320);
     @include adaptive-value("padding-bottom", 180, 40, 320);
   }
@@ -207,6 +208,13 @@ body {
   }
 
   &__contact-top {
+    background-image: url("../img/contacts-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__projects-top {
     background-image: url("../img/contacts-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;

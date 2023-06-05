@@ -6,12 +6,14 @@
 
 // Sections or Pages SCSS-files imports
 @import './header';
+@import './libs/swiper';
 @import './home';
 @import './portfolio';
 @import './clients';
 @import './team';
 @import './contacts';
 @import './project-form';
+@import './projects';
 @import './footer';
 
 // Libs
