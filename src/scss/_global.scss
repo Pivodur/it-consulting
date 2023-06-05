@@ -232,4 +232,10 @@ body {
       }
     }
   }
+
+  &__spectrum {
+    background: #E6E8EF;
+    @include adaptive-value("padding-top", 110, 80, 320);
+    @include adaptive-value("padding-bottom", 110, 80, 320);
+  }
 }
