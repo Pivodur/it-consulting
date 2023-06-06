@@ -76,6 +76,7 @@ footer {
       display: flex;
       justify-content: center;
       column-gap: 40px;
+      padding: 20px 0;
     }
     @media (max-width: 375px){
       column-gap: 0;

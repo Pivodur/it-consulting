@@ -133,7 +133,8 @@ body {
 .section {
   &__services,
   &__team,
-  &__cooperation {
+  &__cooperation,
+  &__steps {
     @include adaptive-value("padding-top", 180, 40, 320);
     @include adaptive-value("padding-bottom", 180, 40, 320);
   }
@@ -233,9 +234,11 @@ body {
     }
   }
 
-  &__spectrum {
+  &__spectrum,
+  &__additional {
     background: #E6E8EF;
     @include adaptive-value("padding-top", 110, 80, 320);
     @include adaptive-value("padding-bottom", 110, 80, 320);
   }
+
 }
