@@ -17,6 +17,7 @@ let path = {
       source_folder + "/js/project-form.js",
       source_folder + "/js/contacts.js",
       source_folder + "/js/projects.js",
+      source_folder + "/js/career.js",
     ],
     img: source_folder + "/img/**/*.+(png|jpg|jpeg|ico|svg|webp)",
     fonts: source_folder + "/fonts/*",

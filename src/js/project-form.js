@@ -1,5 +1,3 @@
-
-
 const inputs = document.querySelectorAll(".project-form__input");
 
 inputs.forEach((el) => {

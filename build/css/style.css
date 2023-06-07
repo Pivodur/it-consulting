@@ -213,7 +213,8 @@ body.dark {
 .section__services,
 .section__team,
 .section__cooperation,
-.section__steps {
+.section__steps,
+.section__requirements {
   padding-top: 180px;
   padding-bottom: 180px;
 }
@@ -293,6 +294,13 @@ body.dark {
 
 .section__projects-top {
   background-image: url("../img/contacts-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.section__career-top {
+  background-image: url("../img/career/top-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2606,6 +2614,137 @@ button.swiper-pagination-bullet {
   color: #35417f;
 }
 
+.requirements__subtitle {
+  max-width: 821px;
+  margin-bottom: 76px;
+}
+
+.requirements__positions {
+  max-width: 1188px;
+}
+
+.requirements .accordion__item {
+  border-bottom: 2px solid #dddde2;
+}
+
+.requirements .accordion__item .accordion__item-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.requirements .accordion__item .accordion__item-trigger .trigger__text {
+  font-size: 26px;
+  color: #535670;
+  margin-right: 10px;
+}
+
+.requirements .accordion__item .accordion__item-trigger .trigger__img {
+  margin-right: 42px;
+  margin-left: auto;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.requirements .accordion__item .accordion__item-trigger .trigger__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.requirements .accordion__item .accordion__item-content {
+  padding-bottom: 40px;
+  display: none;
+  -webkit-animation: fade 0.3s ease;
+          animation: fade 0.3s ease;
+}
+
+.requirements .accordion__item.accordion__item-active .accordion__item-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.requirements .accordion__item.accordion__item-active .trigger__img {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.requirements .accordion__tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+
+.requirements .accordion__tag {
+  background: #e6e8ef;
+  border-radius: 4px;
+  padding: 4px 14px;
+  font-size: 11px;
+  line-height: 20px;
+  color: #989aa9;
+}
+
+.requirements .accordion__content-inner {
+  max-width: 946px;
+}
+
+.requirements .accordion__content-item {
+  margin-bottom: 40px;
+}
+
+.requirements .accordion__content-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #35417f;
+  margin-bottom: 10px;
+}
+
+.requirements .accordion__list-item {
+  padding-left: 19px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.requirements .accordion__list-item::before {
+  position: absolute;
+  content: "";
+  background: #1e74ec;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  left: 0;
+  top: 0.5em;
+}
+
+.requirements .accordion__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+}
+
 footer {
   display: block;
   background: #03115f;
@@ -2711,7 +2850,8 @@ footer {
   .section__services,
   .section__team,
   .section__cooperation,
-  .section__steps {
+  .section__steps,
+  .section__requirements {
     padding-top: calc(
         40px + 140 * ((100vw - 320px) /
               (1440 - 320))
@@ -2721,7 +2861,8 @@ footer {
   .section__services,
   .section__team,
   .section__cooperation,
-  .section__steps {
+  .section__steps,
+  .section__requirements {
     padding-bottom: calc(
         40px + 140 * ((100vw - 320px) /
               (1440 - 320))
@@ -3170,6 +3311,20 @@ footer {
       );
   }
 
+  .requirements .accordion__item .accordion__item-trigger .trigger__text {
+    font-size: calc(
+        14px + 12 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
+  .requirements .accordion__content-item {
+    margin-bottom: calc(
+        24px + 16 * ((100vw - 320px) /
+              (1440 - 320))
+      );
+  }
+
   .footer {
     padding-top: calc(
         40px + 24 * ((100vw - 320px) /
@@ -3574,6 +3729,14 @@ footer {
     width: 100px;
   }
 
+  .requirements__subtitle {
+    margin-bottom: 53px;
+  }
+
+  .requirements .accordion__item .accordion__item-trigger .accordion__tags {
+    display: none;
+  }
+
   .footer__team {
     max-width: 47%;
     margin-bottom: 20px;
@@ -3968,6 +4131,25 @@ footer {
   .additional__text {
     padding-left: 8px;
     padding-right: 0;
+  }
+
+  .requirements .accordion__item .accordion__item-trigger {
+    padding: 20px 0;
+  }
+
+  .requirements .accordion__item .accordion__item-trigger .trigger__img {
+    width: 9px;
+  }
+
+  .requirements .accordion__content-title {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .requirements .accordion__list-item {
+    margin-bottom: 8px;
+    padding-left: 14px;
+    font-size: 12px;
   }
 }
 

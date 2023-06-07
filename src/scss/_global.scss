@@ -134,7 +134,8 @@ body {
   &__services,
   &__team,
   &__cooperation,
-  &__steps {
+  &__steps,
+  &__requirements {
     @include adaptive-value("padding-top", 180, 40, 320);
     @include adaptive-value("padding-bottom", 180, 40, 320);
   }
@@ -217,6 +218,13 @@ body {
 
   &__projects-top {
     background-image: url("../img/contacts-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__career-top {
+    background-image: url("../img/career/top-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
