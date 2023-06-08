@@ -216,7 +216,6 @@ const selectLang = new Select("#select", {
   },
 });
 
-
 // Аккордеон
 function accordion() {
   const items = document.querySelectorAll(".accordion__item-trigger");
@@ -235,3 +234,20 @@ function accordion() {
   });
 }
 accordion();
+
+const inputs = document.querySelectorAll(".project-form__input");
+
+inputs.forEach((el) => {
+  el.addEventListener("input", () => {
+    if (
+      el.nextElementSibling &&
+      el.nextElementSibling.classList.contains("project-form__placeholder")
+    ) {
+      if (el.value) {
+        el.nextElementSibling.classList.add("hidden");
+      } else {
+        el.nextElementSibling.classList.remove("hidden");
+      }
+    }
+  });
+});

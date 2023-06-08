@@ -27,7 +27,7 @@
   &__content {
     margin-top: -227px;
     .container {
-      @media (max-width: $breakpoint480){
+      @media (max-width: $breakpoint480) {
         padding: 0;
       }
     }
@@ -42,7 +42,7 @@
     @media (max-width: $breakpoint992) {
       flex-wrap: wrap;
     }
-    @media (max-width: $breakpoint480){
+    @media (max-width: $breakpoint480) {
       padding: 0;
     }
   }
@@ -58,10 +58,9 @@
     @media (max-width: $breakpoint992) {
       max-width: 100%;
     }
-    @media (max-width: $breakpoint480){
+    @media (max-width: $breakpoint480) {
       padding: 40px 16px;
     }
-
   }
 
   &__info-top {
@@ -139,7 +138,7 @@
     @media (max-width: $breakpoint992) {
       max-width: 100%;
     }
-    @media (max-width: $breakpoint480){
+    @media (max-width: $breakpoint480) {
       padding: 40px 16px;
     }
   }
@@ -198,7 +197,11 @@
 
   &__btn {
     flex-shrink: 3;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
     @media (max-width: $breakpoint480) {
+      font-size: 14px;
       width: 100%;
     }
   }
